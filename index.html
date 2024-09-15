@@ -25,15 +25,17 @@
 
         h1 {
             font-size: 5rem;
-            color: #0ff; /* Neon color */
+            color: #ccff33; /* Highlighter yellow-green neon color */
             text-align: center;
             text-transform: uppercase;
             text-shadow:
-                0 0 5px #0ff,    /* Light glow */
-                0 0 10px #0ff,
-                0 0 20px #0ff,   /* Brighter glow */
-                0 0 30px #00f;   /* Blue outer glow */
-            animation: neonFlicker 1.5s ease-in-out infinite alternate;
+                0 0 5px #ccff33,    /* Outer glow */
+                0 0 10px #ccff33,
+                0 0 20px #ccff33,   /* Inner neon light */
+                0 0 30px #99ff33,   /* Faint green glow */
+                0 0 40px #99ff33,   /* Additional glowing */
+                0 0 50px #99ff33;
+            animation: neonFlicker 1.5s infinite;
         }
 
         /* Background animation for subtle movement */
@@ -51,18 +53,19 @@
 
         /* Neon flicker effect */
         @keyframes neonFlicker {
-            0% {
+            0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
                 text-shadow:
-                    0 0 3px #0ff,
-                    0 0 7px #0ff,
-                    0 0 20px #00f;
+                    0 0 5px #ccff33,
+                    0 0 10px #ccff33,
+                    0 0 20px #ccff33,
+                    0 0 30px #99ff33,
+                    0 0 40px #99ff33,
+                    0 0 50px #99ff33;
+                opacity: 1;
             }
-            100% {
-                text-shadow:
-                    0 0 10px #0ff,
-                    0 0 20px #0ff,
-                    0 0 30px #00f,
-                    0 0 40px #00f;
+            20%, 24%, 55% {
+                text-shadow: none;
+                opacity: 0.5; /* Flickering with reduced brightness */
             }
         }
     </style>
