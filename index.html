@@ -15,7 +15,9 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background-color: #121212;
+            background: linear-gradient(135deg, #121212, #282828, #1a1a1a);
+            background-size: 400% 400%; /* Makes the gradient larger for a subtle animation */
+            animation: backgroundShift 10s ease infinite;
             color: #ffffff;
             font-family: "Poiret One", sans-serif;
             font-weight: 400;
@@ -32,20 +34,6 @@
             position: relative;
         }
 
-        /* Add a subtle glow effect */
-        h1:before {
-            content: '';
-            position: absolute;
-            top: -10px;
-            left: -10px;
-            right: -10px;
-            bottom: -10px;
-            border-radius: 15px;
-            border: 2px solid rgba(255, 255, 255, 0.2);
-            opacity: 0;
-            animation: glow 3s ease-in-out infinite;
-        }
-
         /* Simple fade-in animation for the title */
         @keyframes fadeIn {
             0% {
@@ -58,13 +46,16 @@
             }
         }
 
-        /* Glow effect animation for the border */
-        @keyframes glow {
-            0%, 100% {
-                opacity: 0;
+        /* Background animation for subtle movement */
+        @keyframes backgroundShift {
+            0% {
+                background-position: 0% 50%;
             }
             50% {
-                opacity: 1;
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
             }
         }
     </style>
