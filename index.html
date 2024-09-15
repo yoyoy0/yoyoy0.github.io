@@ -16,7 +16,7 @@
             align-items: center;
             height: 100vh;
             background: linear-gradient(135deg, #121212, #282828, #1a1a1a);
-            background-size: 400% 400%; /* Makes the gradient larger for a subtle animation */
+            background-size: 400% 400%;
             animation: backgroundShift 10s ease infinite;
             color: #ffffff;
             font-family: "Poiret One", sans-serif;
@@ -24,26 +24,20 @@
         }
 
         h1 {
-            font-size: 4rem;
-            font-weight: bold;
-            padding: 20px 40px;
-            border: 2px solid #ffffff;
-            border-radius: 10px;
+            font-size: 5rem;
+            color: #0ff; /* Light neon color */
             text-align: center;
-            animation: fadeIn 3s ease-in-out;
-            position: relative;
-        }
-
-        /* Simple fade-in animation for the title */
-        @keyframes fadeIn {
-            0% {
-                opacity: 0;
-                transform: translateY(-20px);
-            }
-            100% {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            text-transform: uppercase;
+            text-shadow:
+                0 0 5px #0ff,    /* Outer glow */
+                0 0 10px #0ff,
+                0 0 20px #00f,   /* Darker blue inner glow */
+                0 0 30px #00f,
+                0 0 40px #00f,
+                0 0 50px #00f,
+                0 0 60px #00f,
+                0 0 70px #00f;
+            animation: neonFlicker 2s infinite alternate;
         }
 
         /* Background animation for subtle movement */
@@ -58,9 +52,10 @@
                 background-position: 0% 50%;
             }
         }
-    </style>
-</head>
-<body>
-    <h1>P47R1CK.NET</h1>
-</body>
-</html>
+
+        /* Neon flicker effect */
+        @keyframes neonFlicker {
+            0% {
+                text-shadow:
+                    0 0 2px #0ff,
+                    0​⬤
