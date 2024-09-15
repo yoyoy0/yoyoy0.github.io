@@ -43,15 +43,15 @@
 
         /* Flicker animations only for numbers */
         h1 span.number {
-            animation: flicker 8s infinite steps(1);
+            animation: flicker 10s infinite;
         }
 
         /* Flicker keyframes (less frequent flicker) */
         @keyframes flicker {
-            0%, 95%, 100% {
+            0%, 90%, 100% {
                 opacity: 1;
             }
-            96%, 99% {
+            91%, 94%, 98% {
                 opacity: 0;
             }
         }
