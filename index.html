@@ -16,7 +16,7 @@
             align-items: center;
             height: 100vh;
             font-family: "Poiret One", sans-serif;
-            position: relative; /* Required for the overlay */
+            position: relative;
         }
 
         /* Background image with a darker overlay */
@@ -51,34 +51,68 @@
             text-transform: uppercase;
             position: relative;
             filter: drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.7)); /* Drop shadow for depth */
+            opacity: 0; /* Initially off */
+            animation: turnOn 2.5s ease forwards; /* Neon turns on over 2.5 seconds */
         }
 
-        /* Enhanced neon glow effect */
+        /* Neon glow effect */
         h1 span {
             display: inline-block;
             text-shadow:
-                0 0 5px #fff,    /* Bright white inner glow */
-                0 0 10px #99cc33, /* Neon green core glow */
-                0 0 20px #99cc33, /* Larger neon green glow */
-                0 0 30px #99cc33, /* Further neon glow */
-                0 0 40px #99cc33, /* Expanding neon glow */
-                0 0 50px #99cc33; /* Subtle outer glow */
+                0 0 0px #fff,    /* Initially no glow */
+                0 0 0px #99cc33,
+                0 0 0px #99cc33,
+                0 0 0px #99cc33;
+            animation: glowUp 2.5s ease forwards; /* Gradually glows */
+        }
+
+        /* Turn on animation for the text */
+        @keyframes turnOn {
+            0% {
+                opacity: 0;
+            }
+            50% {
+                opacity: 0.5;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        /* Gradual glow increase for the neon effect */
+        @keyframes glowUp {
+            0% {
+                text-shadow:
+                    0 0 0px #fff,
+                    0 0 0px #99cc33,
+                    0 0 0px #99cc33,
+                    0 0 0px #99cc33;
+            }
+            100% {
+                text-shadow:
+                    0 0 5px #fff,    /* Bright white inner glow */
+                    0 0 10px #99cc33, /* Neon green core glow */
+                    0 0 20px #99cc33, /* Larger neon green glow */
+                    0 0 40px #99cc33, /* Further neon glow */
+                    0 0 60px #99cc33, /* Expanding neon glow */
+                    0 0 80px #99cc33; /* Subtle outer glow */
+            }
         }
 
         /* Flicker animations for each number, flickering independently */
         h1 span.number-4 {
-            animation: flicker1 2s infinite;
+            animation: glowUp 2.5s ease forwards, flicker1 2s infinite;
         }
 
         h1 span.number-7 {
-            animation: flicker2 3s infinite;
+            animation: glowUp 2.5s ease forwards, flicker2 3s infinite;
         }
 
         h1 span.number-1 {
-            animation: flicker3 2.5s infinite;
+            animation: glowUp 2.5s ease forwards, flicker3 2.5s infinite;
         }
 
-        /* Faster but less smooth flicker keyframes */
+        /* Flicker keyframes */
         @keyframes flicker1 {
             0%, 90%, 100% {
                 opacity: 1;
