@@ -23,16 +23,16 @@
 
         h1 {
             font-size: 5rem;
-            color: #7be228; /* Highlighter yellow-green neon color */
+            color: #99cc33; /* Softer yellow-green neon color */
             text-align: center;
             text-transform: uppercase;
             position: relative;
             text-shadow:
-                0 0 5px #ccff33,
-                0 0 10px #ccff33,
-                0 0 20px #ccff33,
-                0 0 30px #99ff33,
-                0 0 40px #99ff33;
+                0 0 2px #99cc33,    /* Reduced intensity of the outer glow */
+                0 0 5px #99cc33,    /* Softer glow */
+                0 0 10px #99cc33,   /* Dimmed inner glow */
+                0 0 15px #669933,   /* Faint green outer glow */
+                0 0 20px #669933;
         }
 
         /* Pseudo-elements for flickering */
@@ -43,8 +43,8 @@
             left: 0;
             width: 100%;
             height: 100%;
-            color: #ccff33;
-            text-shadow: 0 0 5px #ccff33, 0 0 10px #ccff33, 0 0 20px #ccff33, 0 0 30px #99ff33, 0 0 40px #99ff33;
+            color: #99cc33;
+            text-shadow: 0 0 2px #99cc33, 0 0 5px #99cc33, 0 0 10px #99cc33, 0 0 15px #669933, 0 0 20px #669933;
             opacity: 0;
         }
 
