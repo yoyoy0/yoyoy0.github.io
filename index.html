@@ -15,9 +15,33 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background: url('hwkaji-dQTfLquJq0Q-unsplash.jpeg') no-repeat center center; /* URL of brick wall image */
-            background-size: cover; /* Ensures the image covers the entire background */
             font-family: "Poiret One", sans-serif;
+            position: relative; /* Required for the overlay */
+        }
+
+        /* Background image with a darker overlay */
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('hwkaji-dQTfLquJq0Q-unsplash.jpeg') no-repeat center center; /* Background image */
+            background-size: cover;
+            z-index: -2; /* Ensure it stays below everything */
+            filter: brightness(0.4); /* Darken the image */
+        }
+
+        body::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.5); /* Transparent overlay */
+            z-index: -1; /* Ensure it stays below the text */
         }
 
         h1 {
