@@ -18,13 +18,55 @@
             background-color: #121212;
             color: #ffffff;
             font-family: "Poiret One", sans-serif;
-            font-weight: 400; /* Adjust this if needed, as "Poiret One" may not have different weights */
-            }
+            font-weight: 400;
+        }
 
         h1 {
             font-size: 4rem;
-            font-weight: bold; /* Corrected */
+            font-weight: bold;
+            padding: 20px 40px;
+            border: 2px solid #ffffff;
+            border-radius: 10px;
+            text-align: center;
+            animation: fadeIn 3s ease-in-out;
+            position: relative;
+        }
+
+        /* Add a subtle glow effect */
+        h1:before {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            right: -10px;
+            bottom: -10px;
+            border-radius: 15px;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            opacity: 0;
+            animation: glow 3s ease-in-out infinite;
+        }
+
+        /* Simple fade-in animation for the title */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(-20px);
             }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Glow effect animation for the border */
+        @keyframes glow {
+            0%, 100% {
+                opacity: 0;
+            }
+            50% {
+                opacity: 1;
+            }
+        }
     </style>
 </head>
 <body>
