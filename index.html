@@ -41,17 +41,43 @@
                 0 0 20px #669933;   /* Green outer glow */
         }
 
-        /* Flicker animations only for numbers */
-        h1 span.number {
-            animation: flicker 10s infinite;
+        /* Flicker animations for each number, flickering independently */
+        h1 span.number-4 {
+            animation: flicker1 4s infinite;
         }
 
-        /* Flicker keyframes (less frequent flicker) */
-        @keyframes flicker {
+        h1 span.number-7 {
+            animation: flicker2 6s infinite;
+        }
+
+        h1 span.number-1 {
+            animation: flicker3 5s infinite;
+        }
+
+        /* Flicker keyframes for each number */
+        @keyframes flicker1 {
             0%, 90%, 100% {
                 opacity: 1;
             }
-            91%, 94%, 98% {
+            91%, 93%, 97% {
+                opacity: 0;
+            }
+        }
+
+        @keyframes flicker2 {
+            0%, 80%, 100% {
+                opacity: 1;
+            }
+            81%, 85%, 95% {
+                opacity: 0;
+            }
+        }
+
+        @keyframes flicker3 {
+            0%, 85%, 100% {
+                opacity: 1;
+            }
+            86%, 89%, 98% {
                 opacity: 0;
             }
         }
@@ -72,8 +98,8 @@
 </head>
 <body>
     <h1>
-        <!-- Wrapping the numbers with the class "number" to apply the flicker -->
-        <span>P</span><span class="number">4</span><span class="number">7</span><span>R</span><span class="number">1</span><span>C</span><span>K</span><span>.</span><span>N</span><span>E</span><span>T</span>
+        <!-- Applying unique classes to numbers for independent flickering -->
+        <span>P</span><span class="number-4">4</span><span class="number-7">7</span><span>R</span><span class="number-1">1</span><span>C</span><span>K</span><span>.</span><span>N</span><span>E</span><span>T</span>
     </h1>
 </body>
 </html>
