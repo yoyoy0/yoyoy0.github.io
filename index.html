@@ -52,7 +52,7 @@
             position: relative;
             filter: drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.7)); /* Drop shadow for depth */
             opacity: 0; /* Initially off */
-            animation: turnOn 2.5s ease forwards; /* Neon turns on over 2.5 seconds */
+            animation: turnOn 2.5s ease forwards 3s; /* Neon turns on after 3 seconds */
         }
 
         /* Neon glow effect */
@@ -63,7 +63,7 @@
                 0 0 0px #99cc33,
                 0 0 0px #99cc33,
                 0 0 0px #99cc33;
-            animation: glowUp 2.5s ease forwards; /* Gradually glows */
+            animation: glowUp 2.5s ease forwards 3s; /* Delayed glow-up animation */
         }
 
         /* Turn on animation for the text */
@@ -101,15 +101,15 @@
 
         /* Flicker animations for each number, flickering independently */
         h1 span.number-4 {
-            animation: glowUp 2.5s ease forwards, flicker1 2s infinite;
+            animation: glowUp 2.5s ease forwards 3s, flicker1 2s infinite 5.5s;
         }
 
         h1 span.number-7 {
-            animation: glowUp 2.5s ease forwards, flicker2 3s infinite;
+            animation: glowUp 2.5s ease forwards 3s, flicker2 3s infinite 6s;
         }
 
         h1 span.number-1 {
-            animation: glowUp 2.5s ease forwards, flicker3 2.5s infinite;
+            animation: glowUp 2.5s ease forwards 3s, flicker3 2.5s infinite 5.8s;
         }
 
         /* Flicker keyframes */
