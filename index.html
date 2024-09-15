@@ -15,9 +15,8 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background: linear-gradient(135deg, #121212, #282828, #1a1a1a);
-            background-size: 400% 400%;
-            animation: backgroundShift 20s ease infinite;
+            background: url('https://your-brick-wall-image-url.jpg') no-repeat center center; /* URL of brick wall image */
+            background-size: cover; /* Ensures the image covers the entire background */
             font-family: "Poiret One", sans-serif;
         }
 
@@ -37,6 +36,7 @@
                 0 0 3px #ffffff,    /* Softer glow */
                 0 0 7px #99cc33,    /* Dimmed yellow-green glow */
                 0 0 10px #ff66ff,   /* Pink glow */
+                0 0 13px #00ffff,   /* Cyan glow */
                 0 0 15px #669933;   /* Green outer glow */
         }
 
@@ -46,11 +46,11 @@
         }
 
         h1 span.number-7 {
-            animation: flicker2 0.75s infinite;
+            animation: flicker2 3s infinite;
         }
 
         h1 span.number-1 {
-            animation: flicker3 0.5s infinite;
+            animation: flicker3 2.5s infinite;
         }
 
         /* More frequent and less smooth flicker keyframes */
@@ -78,19 +78,6 @@
             }
             81%, 84%, 89% {
                 opacity: 0;
-            }
-        }
-
-        /* Background animation for subtle movement */
-        @keyframes backgroundShift {
-            0% {
-                background-position: 0% 50%;
-            }
-            50% {
-                background-position: 100% 50%;
-            }
-            100% {
-                background-position: 0% 50%;
             }
         }
     </style>
