@@ -17,47 +17,56 @@
             height: 100vh;
             background: linear-gradient(135deg, #121212, #282828, #1a1a1a);
             background-size: 400% 400%;
-            animation: backgroundShift 20s ease infinite; /* Slowed down the background movement */
+            animation: backgroundShift 20s ease infinite;
             font-family: "Poiret One", sans-serif;
         }
 
         h1 {
-            font-size: 10vw; /* Responsive font size based on viewport width */
+            font-size: 10vw; /* Responsive font size */
             color: #99cc33; /* Softer yellow-green neon color */
             text-align: center;
             text-transform: uppercase;
             position: relative;
+        }
+
+        /* Applying neon glow to each span */
+        h1 span {
+            display: inline-block;
             text-shadow:
-                0 0 2px #ffffff,    /* White inner glow */
-                0 0 3px #ffffff,    /* Softer white glow */
+                0 0 2px #ffffff,    /* Inner white glow */
+                0 0 3px #ffffff,    /* Softer glow */
                 0 0 7px #99cc33,    /* Dimmed yellow-green glow */
                 0 0 10px #ff66ff,   /* Pink glow */
                 0 0 15px #00ffff,   /* Cyan glow */
                 0 0 20px #669933;   /* Green outer glow */
         }
 
-        /* Pseudo-elements for flickering */
-        h1::before, h1::after {
-            content: "P47R1CK.NET"; /* Copy of the text */
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            color: #99cc33;
-            text-shadow: 0 0 2px #ffffff, 0 0 3px #ffffff, 0 0 7px #99cc33, 0 0 10px #ff66ff, 0 0 15px #00ffff, 0 0 20px #669933;
-            opacity: 0;
+        /* Flicker animations for different letters */
+        h1 span:nth-child(1) {
+            animation: flicker1 2s infinite steps(10);
         }
 
-        h1::before {
-            animation: flicker1 2.5s infinite steps(10); /* More random flicker timing */
+        h1 span:nth-child(2) {
+            animation: flicker2 2.5s infinite steps(12);
         }
 
-        h1::after {
-            animation: flicker2 3.5s infinite steps(15); /* More random flicker timing */
+        h1 span:nth-child(3) {
+            animation: flicker3 3s infinite steps(8);
         }
 
-        /* Flicker keyframes for different spots */
+        h1 span:nth-child(4), h1 span:nth-child(5) {
+            animation: flicker1 1.8s infinite steps(10);
+        }
+
+        h1 span:nth-child(6), h1 span:nth-child(7) {
+            animation: flicker2 2.2s infinite steps(15);
+        }
+
+        h1 span:nth-child(8), h1 span:nth-child(9) {
+            animation: flicker3 3.2s infinite steps(9);
+        }
+
+        /* Flicker keyframes */
         @keyframes flicker1 {
             0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
                 opacity: 1;
@@ -72,6 +81,15 @@
                 opacity: 1;
             }
             15%, 25%, 65%, 75% {
+                opacity: 0;
+            }
+        }
+
+        @keyframes flicker3 {
+            0%, 25%, 50%, 75%, 100% {
+                opacity: 1;
+            }
+            15%, 45%, 65%, 85% {
                 opacity: 0;
             }
         }
@@ -91,6 +109,9 @@
     </style>
 </head>
 <body>
-    <h1>P47R1CK.NET</h1>
+    <h1>
+        <!-- Wrapping each character in a span for independent animation -->
+        <span>P</span><span>4</span><span>7</span><span>R</span><span>1</span><span>C</span><span>K</span><span>.</span><span>N</span><span>E</span><span>T</span>
+    </h1>
 </body>
 </html>
