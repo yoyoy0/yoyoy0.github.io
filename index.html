@@ -43,47 +43,41 @@
 
         /* Flicker animations for each number, flickering independently */
         h1 span.number-4 {
-            animation: flicker1 5s infinite;
+            animation: flicker1 2s infinite;
         }
 
         h1 span.number-7 {
-            animation: flicker2 8s infinite;
+            animation: flicker2 3s infinite;
         }
 
         h1 span.number-1 {
-            animation: flicker3 11s infinite;
+            animation: flicker3 2.5s infinite;
         }
 
-        /* Faster but infrequent flicker keyframes */
+        /* More frequent and less smooth flicker keyframes */
         @keyframes flicker1 {
-            0%, 97%, 100% {
+            0%, 90%, 100% {
                 opacity: 1;
             }
-            98% {
+            91%, 93%, 95% {
                 opacity: 0;
             }
         }
 
         @keyframes flicker2 {
-            0%, 95%, 100% {
+            0%, 85%, 100% {
                 opacity: 1;
             }
-            96% {
-                opacity: 0.3;
-            }
-            97% {
+            86%, 88%, 92% {
                 opacity: 0;
             }
         }
 
         @keyframes flicker3 {
-            0%, 90%, 100% {
+            0%, 80%, 100% {
                 opacity: 1;
             }
-            91%, 93% {
-                opacity: 0.5;
-            }
-            94% {
+            81%, 84%, 89% {
                 opacity: 0;
             }
         }
