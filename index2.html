@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap" rel="stylesheet">
+  <title>P47R1CK.NET</title>
+  <style>
+    body {
+      font-family: 'Poiret One', sans-serif;
+      padding: 20px;
+      background-color: #f0f0f0;
+      color: #333;
+    }
+    #content {
+      white-space: pre-wrap; /* Preserves the formatting of the text file */
+      background: #fff;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+  </style>
+</head>
+<body>
+  <h1>Welcome to P47R1CK.NET</h1>
+  <div id="content">Loading...</div>
+
+  <script>
+    fetch('shinji.txt')
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Failed to fetch shinji.txt');
+        }
+        return response.text();
+      })
+      .then(text => {
+        document.getElementById('content').textContent = text;
+      })
+      .catch(error => {
+        document.getElementById('content').textContent = 'Error loading content.';
+        console.error(error);
+      });
+  </script>
+</body>
+</html>
