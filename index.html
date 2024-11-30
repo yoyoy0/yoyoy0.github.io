@@ -11,23 +11,29 @@
     body {
       font-family: 'Poiret One', sans-serif;
       padding: 20px;
-      background-color: #f0f0f0;
-      color: #333;
+      background: url('/images/concrete-bg.jpeg') no-repeat center center fixed;
+      background-size: cover;
+      color: #fff;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
     }
     #content {
       white-space: pre-wrap; /* Preserve formatting (e.g., line breaks, spaces) */
       font-family: 'Courier New', Courier, monospace; /* Fixed-width font */
-      background: #fff;
+      background: rgba(0, 0, 0, 0.7); /* Semi-transparent black background for better readability */
+      color: #fff; /* White text */
       padding: 20px;
       border: 1px solid #ccc;
       border-radius: 8px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
       overflow-x: auto; /* Enable horizontal scrolling if text is too wide */
     }
   </style>
 </head>
 <body>
-  <h1></h1>
+  <h1>Shinji.txt Viewer</h1>
   <div id="content">Loading...</div>
 
   <script>
